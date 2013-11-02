@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -11,14 +12,16 @@ int main(int argc, char *argv[])
 
 	printf("Enter a pattern of consonants and vowels in lowercase, e.g. cvccvvc: ");
 	scanf("%s", input);
-	char *output = [strlen(input)];
-	printf("\nEnter how many names to generate: ")
+	char *output[strlen(input)];
+	printf("\nEnter how many names to generate: ");
+	int *count;
 	scanf("%d", count);
-	printf("\n")
+	printf("\n");
 
-	for (int i=0; i<count; i++)
+	int i, j;
+	for (i=0; i < *count; i++)
 	{
-		for (int j=0; j<strlen(input); j++)
+		for (j=0; j<strlen(input); j++)
 		{
 			if (input[j] == 'c' || input[j] == 'C')
 			{
