@@ -7,24 +7,37 @@ int main(int argc, char *argv[])
 	char *cons = "BCDFGHJKLMNPQRSTVWXY";
 	char *vowel = "AEIOU";
 	char *input;
-	char *output = "";
 	srand(time(NULL));
 
-	printf("Enter a pattern of consonants and vowels in lowercase, e.g. cvccvvc");
+	printf("Enter a pattern of consonants and vowels in lowercase, e.g. cvccvvc: ");
 	scanf("%s", input);
+	char *output = [strlen(input)];
+	printf("\nEnter how many names to generate: ")
+	scanf("%d", count);
+	printf("\n")
 
-	while (input++)
+	for (int i=0; i<count; i++)
 	{
-		if (input[0] == 'c')
+		for (int j=0; j<strlen(input); j++)
 		{
-			int r = rand() % 20;
+			if (input[j] == 'c' || input[j] == 'C')
+			{
+				int r = rand() % 20;
+				output[j] = cons[r];
+			}
+			else if (input[j] == 'v' || input[j] == 'V') 
+			{
+				int r = rand() % 5;
+				output[j] = vowel[r];
+			}
+			else
+			{
+				printf("Invalid character");
+				break;
+			}
 		}
-		else if (input[0] == 'v') 
-		{
-			int r = rand() % 5;
-		}
-
+		printf(output);
+		printf("\n");
 	}
-	
 	return 0;
 }
